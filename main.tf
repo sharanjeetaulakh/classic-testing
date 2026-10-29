@@ -1,5 +1,5 @@
 resource "azurerm_windows_virtual_machine" "virtual_machine" {
-for_each=var.vms
+for_each=var.vms-win
   name                = each.value.name   
   resource_group_name =  each.value.resource_group_name.name
   location            =  each.value.location
