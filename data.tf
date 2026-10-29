@@ -1,8 +1,6 @@
+data "azurerm_network_interface" "nic" {
+  for_each = var.vms-win
 
-data "azurerm_platform_image" "windows" {
-    for_each= var.vms-win
-  location  = each.value.location
-  publisher =  each.value.publisher
-  offer     = each.value. offer   
-  sku       =  each.value.sku  
+  name                = each.value.nic_name
+  resource_group_name = each.value.resource_group_name
 }
