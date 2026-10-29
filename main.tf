@@ -5,7 +5,7 @@ for_each=var.vms-win
   location            =  each.value.location
   size                = each.value.size 
   admin_username      =  each.value.admin_username  
-  admin_password      =  each.value.admin_password     
+ admin_password = var.admin_password_win
 network_interface_ids = [
   data.azurerm_network_interface.nic[each.key].id
 ]
